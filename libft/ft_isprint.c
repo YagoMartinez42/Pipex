@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: samartin <samartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:26:23 by samartin          #+#    #+#             */
-/*   Updated: 2024/05/11 12:14:07 by samartin         ###   ########.fr       */
+/*   Created: 2022/09/12 13:08:25 by samartin          #+#    #+#             */
+/*   Updated: 2022/09/12 13:16:26 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
-
-int	main(int argc, char **argv)
+int	ft_isprint(int c)
 {
-	if(pp_check_args(argc, argv))
+	if (c >= ' ' && c <= '~')
 		return (1);
-
-	return (0);
+	else
+		return (0);
 }

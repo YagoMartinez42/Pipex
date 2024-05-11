@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: samartin <samartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:26:23 by samartin          #+#    #+#             */
-/*   Updated: 2024/05/11 12:14:07 by samartin         ###   ########.fr       */
+/*   Created: 2022/09/21 12:14:19 by samartin          #+#    #+#             */
+/*   Updated: 2022/12/06 13:09:03 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if(pp_check_args(argc, argv))
-		return (1);
+	int	len;
 
-	return (0);
+	if (s)
+	{
+		len = ft_strlen(s);
+		write (fd, s, len);
+	}
+	write (fd, "\n", 1);
 }

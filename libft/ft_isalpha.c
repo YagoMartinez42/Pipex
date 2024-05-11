@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: samartin <samartin@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:26:23 by samartin          #+#    #+#             */
-/*   Updated: 2024/05/11 12:14:07 by samartin         ###   ########.fr       */
+/*   Created: 2022/09/12 11:24:43 by samartin          #+#    #+#             */
+/*   Updated: 2022/09/12 11:25:01 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
-
-int	main(int argc, char **argv)
+int	ft_isalpha(int c)
 {
-	if(pp_check_args(argc, argv))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
-
-	return (0);
+	else
+		return (0);
 }

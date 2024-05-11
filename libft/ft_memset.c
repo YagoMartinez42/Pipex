@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: samartin <samartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:26:23 by samartin          #+#    #+#             */
-/*   Updated: 2024/05/11 12:14:07 by samartin         ###   ########.fr       */
+/*   Created: 2022/09/12 15:47:12 by samartin          #+#    #+#             */
+/*   Updated: 2022/09/14 11:42:39 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if(pp_check_args(argc, argv))
-		return (1);
+	unsigned char	*mempoint;
 
-	return (0);
+	mempoint = b;
+	while (len > 0)
+	{
+		*mempoint = (unsigned char)c;
+		mempoint++;
+		len--;
+	}
+	return (b);
 }

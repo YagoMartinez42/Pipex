@@ -6,7 +6,7 @@
 #    By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/10 14:23:14 by samartin          #+#    #+#              #
-#    Updated: 2024/05/10 14:25:44 by samartin         ###   ########.fr        #
+#    Updated: 2024/05/11 12:17:05 by samartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CC		:= cc
 CFLAGS	:= -Wall -Wextra -Werror
 RM		:= rm -rf
 SRC		:=	pipex.c \
-			pipex_exec.c
+			pipex_exec.c \
+			pipex_prompt_parse.c
 OBJ		:= ${SRC:.c=.o}
 
 all: ${NAME}

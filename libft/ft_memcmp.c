@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: samartin <samartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:26:23 by samartin          #+#    #+#             */
-/*   Updated: 2024/05/11 12:14:07 by samartin         ###   ########.fr       */
+/*   Created: 2022/09/15 10:53:26 by samartin          #+#    #+#             */
+/*   Updated: 2022/09/22 14:30:12 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+int	ft_memcmp(const char *s1, const char *s2, size_t n)
 {
-	if(pp_check_args(argc, argv))
-		return (1);
+	size_t	i;
+	int		diff;
 
-	return (0);
+	i = 0;
+	while (i < n && s1[i] == s2[i])
+		i++;
+	if (i < n)
+		diff = (unsigned char)s1[i] - (unsigned char)s2[i];
+	else
+		return (0);
+	return (diff);
 }

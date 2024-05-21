@@ -6,7 +6,7 @@
 /*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:30:28 by samartin          #+#    #+#             */
-/*   Updated: 2024/05/19 19:58:54 by samartin         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:59:40 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,31 @@ int	pp_pipex_hdoc_append(int argc, char **argv, char **envp)
 int	pp_pipex_files(int argc, char **argv, char **envp)
 {
 	int		i;
+	int		pid;
 	t_list	*pipe_lst;
 
 	pipe_lst = pp_create_pipes(argc - 2);
 	if (!pipe_lst)
 	{
-		perror("Memory error creating pipes");
+		perror("Memory error creating pipes.\n");
 		return (1);
 	}
 	i = 1;
-
+	while (i < argc)
+	{
+    	pid = fork();
+    	if (pid == -1)
+		{
+      		perror("Fork failed.\n");
+			pp_lst_clean(pipe_lst);
+			exit(1);
+		}
+		else if (pid)
+		{
+			//close all all pipes except mines
+			//execve
+		}
+	}
+	waitpid(pid);
 	return (0);
 }
